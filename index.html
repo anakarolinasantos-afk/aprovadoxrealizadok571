@@ -120,7 +120,8 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Processo de importação — Ultra Atacadista · K571</div>
-  <h1 class="hero-title">Aprovado <span>×</span> Realizado K571</h1>
+  <h1 class="hero-title">Aprovado <span>×</span> Realizado</h1>
+  <div class="hero-meta">
   <div class="hero-badge">▼ -3,94% abaixo do orçado</div>
 </div>
 
@@ -223,9 +224,12 @@
 
 <script>
 // ── DADOS ─────────────────────────────────────────────────────────────
-const cats = ['Valor da Mercadoria', 'Impostos de Entrada D.I.', 'Frete Marítimo', 'Desp. Desembaraço'];
-const apr  = [133187.94, 62175.98, 3753.00, 60806.17];
-const rea  = [128293.37, 57033.69, 4902.99, 58060.85];
+// Valor da Mercadoria = FOB puro (sem frete int. e sem seguro)
+// Frete Total = Frete Internacional (11.024,00 / 6.398,23) + Frete Marítimo (3.753,00 / 4.902,99)
+// Seguro = linha própria
+const cats = ['Valor da Mercadoria (FOB)', 'Frete Total', 'Seguro', 'Impostos de Entrada D.I.', 'Desp. Desembaraço'];
+const apr  = [121272.48, 14777.00, 891.46, 62175.98, 60806.17];
+const rea  = [120966.10, 11301.22, 929.04, 57033.69, 58060.85];
 const totalApr  = 283970.98;
 const totalReal = 272775.71;
 
@@ -249,7 +253,7 @@ const produtos = [
 const fmtBRL = v => 'R$ ' + v.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
 const fmtK   = v => 'R$ ' + (v/1000).toFixed(1) + 'k';
 const gc = 'rgba(0,0,0,0.06)', tc = '#999', ff = "'Poppins', sans-serif";
-const pieColors = ['#2563eb','#ea580c','#1e9e62','#7c3aed'];
+const pieColors = ['#2563eb','#ea580c','#1e9e62','#7c3aed','#f59e0b'];
 const prod13   = ['#2563eb','#3b82f6','#1e9e62','#10b981','#34d399','#ea580c','#f97316','#7c3aed','#dc2626','#f59e0b','#06b6d4','#84cc16','#ec4899'];
 
 // ── TABELA GERAL ──────────────────────────────────────────────────────
